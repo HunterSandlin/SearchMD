@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.logging.Logger;
 
@@ -46,10 +47,20 @@ public class UserController {
         return userRepository.findAll();
     }
     @GetMapping(path = "/findUser")
-    public @ResponseBody Optional<Usertable> getUserbyId(@RequestParam int userid) {
-        return userRepository.findById(userid);
+    public @ResponseBody boolean getUserbyId(@RequestParam int userid, @RequestParam String password) {
+        boolean loginStatus = false;
+        try {
+            Usertable response = userRepository.findById(userid).get();
+            if (response.getPassword().equals(password)) {
+                loginStatus = true;
+            }
+        } catch (NoSuchElementException error) {
+            loginStatus = false;
+
+        }
+        return loginStatus;
     }
-}
+    }
 
 
 
