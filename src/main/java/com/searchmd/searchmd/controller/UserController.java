@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Optional;
 import java.util.logging.Logger;
 
 @Controller // This means that this class is a Controller
@@ -43,6 +44,10 @@ public class UserController {
         //logger.log(Level.INFO,"In get all usermethod");
 
         return userRepository.findAll();
+    }
+    @GetMapping(path = "/findUser")
+    public @ResponseBody Optional<Usertable> getUserbyId(@RequestParam int userid) {
+        return userRepository.findById(userid);
     }
 }
 
