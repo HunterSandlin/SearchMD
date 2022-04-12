@@ -1,57 +1,57 @@
 create database  searchMD;
 use searchMd;
 
-drop database searchmd;
+-- drop database searchmd;
 
 
 
 create table patienttable(
-patientId int(4) not null auto_increment,
-userId int(4),
-plName varchar(500),
-pfName varchar(500),
+patientid int(4) not null auto_increment,
+userid int(4),
+plname varchar(500),
+pfname varchar(500),
 dob datetime,
-insuranceId varchar(100),
-userRole varchar(1) default 'p',
-primary key(patientId)
+insuranceid varchar(100),
+userrole varchar(1) default 'p',
+primary key(patientid)
  );
 
 CREATE TABLE doctortable(
-doctorId int(4) not null auto_increment,
-userId int(4),
-dlName varchar(500),
-dfName varchar(500),
+doctorid int(4) not null auto_increment,
+userid int(4),
+dlname varchar(500),
+dfname varchar(500),
 specialty varchar(500),
-userRole varchar(1) default 'd',
-primary key(doctorId)
+userrole varchar(1) default 'd',
+primary key(doctorid)
 
 );
 
 
 CREATE TABLE admintable(
-adminId int(4)  not null auto_increment,
-userId int(4),
-alName varchar(500),
-afName varchar(500),
-userRole varchar(1)default 'a',
-primary key(adminId)
+adminid int(4)  not null auto_increment,
+userid int(4),
+alname varchar(500),
+afname varchar(500),
+userrole varchar(1)default 'a',
+primary key(adminid)
 );
 
 
 CREATE TABLE appointmenttable(
-appId int(4)  not null auto_increment,
-patientId int(4) ,
-doctorId int(4) ,
-appDate datetime,
-primary key(appId),
+appid int(4)  not null auto_increment,
+patientid int(4) ,
+doctorid int(4) ,
+appdate datetime,
+primary key(appid),
 
-FOREIGN KEY (patientId) REFERENCES patienttable(patientId) ON DELETE CASCADE, 
-FOREIGN KEY (doctorId) REFERENCES doctortable(doctorId) ON DELETE CASCADE
+FOREIGN KEY (patientid) REFERENCES patienttable(patientid) ON DELETE CASCADE, 
+FOREIGN KEY (doctorid) REFERENCES doctortable(doctorid) ON DELETE CASCADE
 );
 
 
 CREATE TABLE usertable(
-userId int(4) not null auto_increment primary key,
+userid int(4) not null auto_increment primary key,
 password varchar(500)
 -- userRole varchar(1)
 -- patientId int(4) ,
