@@ -1,7 +1,7 @@
 package com.searchmd.searchmd.controller;
 
-import com.searchmd.searchmd.Usertable;
-import com.searchmd.searchmd.UserRepository;
+import com.searchmd.searchmd.models.Usertable;
+import com.searchmd.searchmd.models.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @Controller // This means that this class is a Controller

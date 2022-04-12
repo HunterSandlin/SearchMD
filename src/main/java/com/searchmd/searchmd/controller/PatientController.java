@@ -2,11 +2,9 @@ package com.searchmd.searchmd.controller;
 
 
 
-import com.searchmd.searchmd.Patienttable;
-import com.searchmd.searchmd.PatientRepository;
-import com.searchmd.searchmd.Usertable;
+import com.searchmd.searchmd.models.Patienttable;
+import com.searchmd.searchmd.models.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.awt.*;
 import java.time.LocalDate;
-import java.util.Date;
 
 import java.util.logging.Logger;
 

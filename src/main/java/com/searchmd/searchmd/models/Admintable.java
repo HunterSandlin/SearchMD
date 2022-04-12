@@ -1,4 +1,4 @@
-package com.searchmd.searchmd;
+package com.searchmd.searchmd.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
