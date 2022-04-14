@@ -18,7 +18,8 @@ import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Logger;
 
 @Controller // This means that this class is a Controller
@@ -39,8 +40,9 @@ public class AppointmentController {
         Appointmenttable appointmentTable = new Appointmenttable();
         appointmentTable.setPatientid(patientId);
         appointmentTable.setDoctorid(doctorId);
-        SimpleDateFormat formatter = new SimpleDateFormat("YYYY-MM-DD hh:mm:ss");
-        Date date = new Date(formatter.parse(appDate).getTime());
+        //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        LocalDateTime date = LocalDateTime.parse(appDate); // date time should be of format yyyy-MM-ddTHH:mm:ss
+        System.out.println((date));
         appointmentTable.setAppdate(date);
         repository.save(appointmentTable);
 

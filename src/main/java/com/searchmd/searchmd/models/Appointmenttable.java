@@ -1,6 +1,7 @@
 package com.searchmd.searchmd.models;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +15,7 @@ public class Appointmenttable {
     private Integer appid;
     private Integer patientid;
     private Integer doctorid;
-    private Date appdate;
+    private LocalDateTime appdate;
 
     public Integer getAppid() {
         return this.appid;
@@ -40,11 +41,11 @@ public class Appointmenttable {
         this.doctorid = doctorid;
     }
 
-    public Date getAppdate() {
+    public LocalDateTime getAppdate() {
         return this.appdate;
     }
 
-    public void setAppdate(Date appdate) {
+    public void setAppdate(LocalDateTime appdate) {
         this.appdate = appdate;
     }
     
