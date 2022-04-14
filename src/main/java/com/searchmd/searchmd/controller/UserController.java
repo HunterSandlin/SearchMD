@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import ch.qos.logback.classic.Level;
+
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.logging.Logger;
+import java.util.logging.*;
 
 @Controller // This means that this class is a Controller
 @RequestMapping(path="/user") // This means URL's start with /user (after Application path)
@@ -69,9 +72,11 @@ public class UserController {
         try {
             Usertable user = userRepository.findByEmail(loginForm.getUsername()).get(0);
             if (user.getPassword().equals(loginForm.getPassword())) {
+                logger.log(java.util.logging.Level.INFO, "Login Success");
                 loginStatus = true;
             }
-        } catch (NoSuchElementException error) {
+        } catch (IndexOutOfBoundsException e) {
+            logger.log(java.util.logging.Level.ALL, "Wrong username");
             loginStatus = false;
 
         }
