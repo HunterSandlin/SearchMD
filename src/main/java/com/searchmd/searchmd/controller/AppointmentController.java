@@ -20,6 +20,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.NoSuchElementException;
 import java.util.logging.Logger;
 
 @Controller // This means that this class is a Controller
@@ -56,5 +57,29 @@ public class AppointmentController {
         
         return repository.findAll();
     }
+
+    @PostMapping(path = "/update")
+    public @ResponseBody boolean updateAppointment (@RequestParam Integer appId, @RequestParam Integer patientId, @RequestParam Integer doctorId, @RequestParam String appDate) throws ParseException {
+        // @ResponseBody means the returned String is the response, not a view name
+        // @RequestParam means it is a parameter from the GET or POST request
+
+        boolean UpdateStatus = true;
+        try{
+            Appointmenttable appointmentTable = repository.findById(appId).get();
+            appointmentTable.setPatientid(patientId);
+            appointmentTable.setDoctorid(doctorId);
+            //DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+            LocalDateTime date = LocalDateTime.parse(appDate); // date time should be of format yyyy-MM-ddTHH:mm:ss
+            System.out.println((date));
+            appointmentTable.setAppdate(date);
+            repository.save(appointmentTable);
+        }
+        catch(NoSuchElementException e){
+            UpdateStatus = false;
+        }
+
+        return UpdateStatus;
+    }
 }
+
 
