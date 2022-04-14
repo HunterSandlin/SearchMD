@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -32,9 +33,9 @@ public class UserController {
         Usertable n = new Usertable();
         n.setUserid(userId);
         n.setPassword(password);
-        n.setAdminid(adminId);
-        n.setDoctorid(doctorId);
-        n.setPatientId(patientId);
+        // n.setAdminid(adminId);
+        // n.setDoctorid(doctorId);
+        // n.setPatientId(patientId);
         userRepository.save(n);
         return "Saved";
     }
@@ -60,8 +61,47 @@ public class UserController {
         }
         return loginStatus;
     }
+
+    @PostMapping("/login")
+    public @ResponseBody boolean login(@RequestBody LoginForm loginForm){
+        
+        boolean loginStatus = false;
+        try {
+            Usertable user = userRepository.findByEmail(loginForm.getUsername()).get(0);
+            if (user.getPassword().equals(loginForm.getPassword())) {
+                loginStatus = true;
+            }
+        } catch (NoSuchElementException error) {
+            loginStatus = false;
+
+        }
+        return loginStatus;
+
     }
 
+    
+}
+
+class LoginForm{
+    private String username;
+    private String password;
+
+    public String getUsername() {
+        return this.username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+}
 
 
 

@@ -49,9 +49,10 @@ FOREIGN KEY (patientid) REFERENCES patienttable(patientid) ON DELETE CASCADE,
 FOREIGN KEY (doctorid) REFERENCES doctortable(doctorid) ON DELETE CASCADE
 );
 
-
-CREATE TABLE usertable(
+DROP TABLE IF EXISTS usertable;
+CREATE table usertable(
 userid int(4) not null auto_increment primary key,
+email varchar(500) not null unique,
 password varchar(500)
 -- userRole varchar(1)
 -- patientId int(4) ,
@@ -62,7 +63,6 @@ password varchar(500)
 -- FOREIGN KEY (doctorId) REFERENCES DoctorTable(doctorId) ON DELETE CASCADE,
 -- FOREIGN KEY (adminId) REFERENCES AdminTable(adminId) ON DELETE CASCADE
 );
-
 
 
 -- insert into PatientTable(userId, plName , pfName, dob, insuranceId,  userRole) values ('2','Taylor','Ellis','2019-06-19','898080', 'p');

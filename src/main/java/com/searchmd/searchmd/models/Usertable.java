@@ -11,46 +11,64 @@ public class Usertable {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private  int userid;
 
-    private int adminid;
+    private String email;
 
-    private  int doctorid;
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    //private int adminid;
+
+    //private  int doctorid;
 
     private String password;
 
-    private  int patientId;
-
-
-    public int getAdminid() {
-        return adminid;
-    }
-
-    public void setAdminid(int adminid) {
-        this.adminid = adminid;
-    }
-
-    public int getDoctorid() {
-        return doctorid;
-    }
-
-    public void setDoctorid(int doctorid) {
-        this.doctorid = doctorid;
-    }
-
     public String getPassword() {
-        return password;
+        return this.password;
     }
 
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public int getPatientId() {
-        return patientId;
-    }
+    //private  int patientId;
 
-    public void setPatientId(int patientId) {
-        this.patientId = patientId;
-    }
+
+    // public int getAdminid() {
+    //     return adminid;
+    // }
+
+    // public void setAdminid(int adminid) {
+    //     this.adminid = adminid;
+    // }
+
+    // public int getDoctorid() {
+    //     return doctorid;
+    // }
+
+    // public void setDoctorid(int doctorid) {
+    //     this.doctorid = doctorid;
+    // }
+
+    // public String getPassword() {
+    //     return password;
+    // }
+
+    // public void setPassword(String password) {
+    //     this.password = password;
+    // }
+
+    // public int getPatientId() {
+    //     return patientId;
+    // }
+
+    // public void setPatientId(int patientId) {
+    //     this.patientId = patientId;
+    // }
 
     public int getUserid() {
         return userid;
