@@ -13,6 +13,9 @@ public interface AppointmenttableRepository extends JpaRepository<Appointmenttab
 
     @Query(value = "select * from appointmenttable a where a.patientid = ?1", nativeQuery = true)
     List<Appointmenttable> getAppointmentsByPatientId(Integer patientId);
+
+    @Query(value = "select * from appointmenttable a where a.appdate like ?1%", nativeQuery = true)
+    List<Appointmenttable> getAppointmentsByDate(String date);
 }
 
 

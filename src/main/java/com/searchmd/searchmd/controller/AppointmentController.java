@@ -105,7 +105,16 @@ public class AppointmentController {
     @GetMapping("/getPatientAppointments")
     public @ResponseBody Iterable<Appointmenttable> getAppointmentByPatientId(@RequestParam int patientId) {
         return repository.getAppointmentsByPatientId(patientId);
+        
     }
+
+    @GetMapping("/getAppointmentsByDate")
+    public @ResponseBody Iterable<Appointmenttable> getAppointmentByDate(@RequestParam String date) {
+        System.out.println(date);
+        return repository.getAppointmentsByDate(date);
+    }
+
+    
 }
 
 
