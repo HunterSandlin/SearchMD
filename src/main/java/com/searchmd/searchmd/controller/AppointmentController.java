@@ -96,6 +96,16 @@ public class AppointmentController {
 
         return UpdateStatus;
     }
+
+    @GetMapping("/getDocAppointments")
+    public @ResponseBody Iterable<Appointmenttable> getAppointmentByDocId(@RequestParam int docid) {
+        return repository.getAppointmentsByDocId((docid));
+    }
+
+    @GetMapping("/getPatientAppointments")
+    public @ResponseBody Iterable<Appointmenttable> getAppointmentByPatientId(@RequestParam int patientId) {
+        return repository.getAppointmentsByPatientId(patientId);
+    }
 }
 
 

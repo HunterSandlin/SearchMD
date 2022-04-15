@@ -1,7 +1,10 @@
 package com.searchmd.searchmd.models;
 
-import org.springframework.data.repository.CrudRepository;
+import java.util.Collection;
 
-public interface DoctorRepository extends CrudRepository<Doctortable, Integer> {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+public interface DoctorRepository extends JpaRepository<Doctortable, Integer>  {
     
 }
