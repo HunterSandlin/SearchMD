@@ -16,6 +16,7 @@ userrole varchar(1) default 'p',
 primary key(patientid)
  );
 
+drop table if exists doctortable;
 CREATE TABLE doctortable(
 doctorid int(4) not null auto_increment,
 userid int(4),
@@ -23,6 +24,7 @@ dlname varchar(500),
 dfname varchar(500),
 specialty varchar(500),
 userrole varchar(1) default 'd',
+zipcode int(5),
 primary key(doctorid)
 
 );
@@ -37,7 +39,7 @@ userrole varchar(1)default 'a',
 primary key(adminid)
 );
 
-
+drop table if exists appointmenttable;
 CREATE TABLE appointmenttable(
 appid int(4)  not null auto_increment,
 patientid int(4) ,
