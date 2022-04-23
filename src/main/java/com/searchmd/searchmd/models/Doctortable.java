@@ -30,6 +30,17 @@ public class Doctortable {
     @Column(name="userrole")
     String UserRole = "d";
 
+    @Column(name="zipcode")
+    int ZipCode;
+
+    public int getZipCode() {
+        return this.ZipCode;
+    }
+
+    public void setZipCode(int ZipCode) {
+        this.ZipCode = ZipCode;
+    }
+
     public int getDoctorId() {
         return this.DoctorId;
     }
