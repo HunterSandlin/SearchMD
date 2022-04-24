@@ -1,5 +1,9 @@
 import {Navbar,Container, Nav, Form, Button, FormControl} from 'react-bootstrap'
 import React from 'react'
+import ReactDOM from 'react-dom'
+import {BrowserRouter as Router, Route, Link} from "react-router-dom";
+
+
 
 class NavbarComponent extends React.Component{
     constructor(props){
@@ -18,6 +22,8 @@ class NavbarComponent extends React.Component{
                 <Nav className="me-auto">
                   <Nav.Link href="#">Appointment</Nav.Link>
                   <Nav.Link href="#">Doctors</Nav.Link>
+
+
                 </Nav>
               </Navbar.Collapse>
               <Form className="d-flex">
