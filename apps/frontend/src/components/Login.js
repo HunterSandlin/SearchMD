@@ -32,7 +32,7 @@ class Login extends React.Component{
                                 <Form.Group className="mb-3" style={paddingStyle} controlId="formBasicPassword">
                                     <Form.Control type="password" placeholder="Password" />
                                 </Form.Group>
-                                <Button variant="primary" type="submit">
+                                <Button onClick={() => {this.props.goToAppointments("Appointments")}} variant="primary" type="submit">
                                     Submit
                                 </Button>
                                 </Form>
