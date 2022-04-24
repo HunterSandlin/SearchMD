@@ -28,7 +28,7 @@ class AppointmentsCard extends React.Component{
                   <Card.Text>
                     Address
                   </Card.Text>
-                  <Card.Link href="#"> For Students</Card.Link>
+                  <Card.Link href="#"> We can remove ifnot needed</Card.Link>
                 </Card.Body>
               </Card>
 
