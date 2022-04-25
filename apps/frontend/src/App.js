@@ -13,17 +13,17 @@ function App() {
 
   return (
     <div className="App">
-      <NavbarComponent setActiveCallback={value => setActive(value)} />
-      {active === "HomePage" && 
-      <HomePage patientLogin={value => setActive(value)} />
-      }
-      {active === "Login" && 
-      <Login goToAppointments={value => setActive(value)}/>
-      }
-      {active === "Appointments" && 
-      <Appointments setActiveCallback={value => setActive(value)} />
+      <NavbarComponent setActiveCallback={(value) => setActive(value)} />
+      {active === "HomePage" && (
+        <HomePage patientLogin={(value) => setActive(value)} />
+      )}
+      {active === "Login" && (
+        <Login goToAppointments={(value) => setActive(value)} />
+      )}
+      {active === "Appointments" && (
+        <Appointments setActiveCallback={(value) => setActive(value)} />
+      )}
       {active === "SearchmdComponent" && <SearchmdComponent />}
-      }
     </div>
   );
 }
