@@ -35,7 +35,7 @@ class NavbarComponent extends React.Component {
             />
             <Button
               onClick={() => {
-                this.props.goToSerachMd("SearchmdComponent");
+                this.props.setActiveCallback("SearchmdComponent");
               }}
               variant="outline-primary"
             >

@@ -23,7 +23,7 @@ function App() {
       {active === "Appointments" && (
         <Appointments setActiveCallback={(value) => setActive(value)} />
       )}
-      {active === "SearchmdComponent" && <SearchmdComponent />}
+      {active === "SearchmdComponent" && <SearchmdComponent />})
     </div>
   );
 }
