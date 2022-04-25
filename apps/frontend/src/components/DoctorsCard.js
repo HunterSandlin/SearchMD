@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from "react-bootstrap/Card";
-//import {Button, Row, Col, Container} from 'react-bootstrap';
+import {Button, Row, Col, Container} from 'react-bootstrap';
 
 class DoctorsCard extends React.Component{
     constructor(props){
@@ -14,6 +14,18 @@ class DoctorsCard extends React.Component{
 
 
     render(){
+
+    const buttonSelectStyle = {
+                marginLeft: '25px',
+                maginTop: '250px',
+                marginRight: '25px',
+                marginBotton: 'auto',
+                borderRadius: '1rem',
+                magin: '50px',
+                width: 'auto',
+                height: 'auto',
+                backgroundColor: 'rgb(40, 150, 20)'
+            };
         return(
            <Card >
 
@@ -25,7 +37,14 @@ class DoctorsCard extends React.Component{
                              <Card.Text>
                                Address
                              </Card.Text>
-                            <Card.Link href="#"> We can remove ifnot needed</Card.Link>
+                             <Row>
+                                 <div>
+                                  <Button onClick={this.toggleModal} style={buttonSelectStyle}  className="center-btn">
+                                 Select
+                                 </Button>
+                               
+                                    </div>
+                                   </Row>
                            </Card.Body>
                          </Card>
         )
