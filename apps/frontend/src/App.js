@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className="App">
-      <NavbarComponent />
+      <NavbarComponent setActiveCallback={value => setActive(value)} />
       {active === "HomePage" && 
       <HomePage patientLogin={value => setActive(value)} />
       }
