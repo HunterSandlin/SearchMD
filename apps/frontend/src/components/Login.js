@@ -19,6 +19,9 @@ class Login extends React.Component{
           };
 
         return(
+            <div>
+                 
+          
             <Container className="d-flex">
                 <Row className="m-auto align-self-center">
                     <Col  style={{padding:'3rem'}}>
@@ -40,7 +43,9 @@ class Login extends React.Component{
                         </Card>
                     </Col>
                 </Row>
-            </Container>               
+            </Container> 
+            <Button variant="outline-info" onClick={() => {this.props.goToAppointments("HomePage")}}>Back</Button>
+            </div>              
         )
     }
 }
