@@ -32,17 +32,17 @@ class DoctorsCard extends React.Component{
                            <Card.Body>
                              <Card.Title style={{ color: "green" }}>{this.props.name}</Card.Title>
                              <Card.Subtitle className="mb-2 text-muted">
-                               Specialty
+                               {this.props.drSpecialty}
                              </Card.Subtitle>
                              <Card.Text>
-                               Address
+                               {this.props.address}
                              </Card.Text>
                              <Row>
                                  <div>
                                   <Button onClick={this.toggleModal} style={buttonSelectStyle}  className="center-btn">
                                  Select
                                  </Button>
-                               
+
                                     </div>
                                    </Row>
                            </Card.Body>

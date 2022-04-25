@@ -16,10 +16,10 @@ class Doctors extends React.Component{
     render(){
         return(
             <div>
-                <DoctorsCard name="Dr. p" />
-                <DoctorsCard name="Dr. m"/>
-                <DoctorsCard name="Dr. Oz" />
-                <DoctorsCard name="Josh" />
+                <DoctorsCard name="Dr. Phil" drSpecialty='Generalist' address='CLT' />
+                <DoctorsCard name="Dr. Myers" drSpecialty='Cardiologists' address='CLT'/>
+                <DoctorsCard name="Dr. Oz" drSpecialty='Dermatologists' address='CLT'/>
+                <DoctorsCard name="Josh" drSpecialty='Family Physicians' address='CLT'/>
             </div>
         )
     }
