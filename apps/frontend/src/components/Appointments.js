@@ -2,16 +2,33 @@ import React from 'react';
 import AppointmentsCard from './AppointmentsCard';
 import {Button, Row, Col, Container} from 'react-bootstrap';
 
-class Appointments extends React.Component{
-    constructor(props){
-        super(props)
-        this.state = { 
-        };
-    }
 
-    componentDidMount(){
-    }
+class Appointments extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      appointments: [],
+    };
+  }
 
+  componentDidMount() {
+    AppointmentService.getAppointments().then((Response) => {
+      this.setState({ appointments: Response.data });
+      console.log(this.state);
+    });
+  }
+
+  render() {
+    const divStyle = {
+      marginLeft: "50px",
+      maginTop: "250px",
+      marginRight: "50px",
+      marginBotton: "auto",
+      borderRadius: "1rem",
+      width: "20rem",
+      height: "auto",
+      align: "flex",
+    };
 
     render(){
 

@@ -6,17 +6,14 @@ import com.searchmd.searchmd.models.Patienttable;
 import com.searchmd.searchmd.models.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 
 import java.util.logging.Logger;
 
 @Controller // This means that this class is a Controller
+@CrossOrigin(origins = "http://localhost:3000/")
 @RequestMapping(path="/patient") // This means URL's start with /user (after Application path)
 public class PatientController {
     @Autowired // This means to get the bean called userRepository
