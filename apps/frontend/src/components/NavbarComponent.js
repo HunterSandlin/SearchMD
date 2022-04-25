@@ -18,12 +18,33 @@ class NavbarComponent extends React.Component {
     return (
       <Navbar bg="light" expand="lg">
         <Container>
-          <Navbar.Brand href="#">SearchMD</Navbar.Brand>
+          <Navbar.Brand
+            href="#"
+            onClick={() => {
+              this.props.setActiveCallback("HomePage");
+            }}
+          >
+            SearchMD
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#">Appointment</Nav.Link>
-              <Nav.Link href="#">Doctors</Nav.Link>
+              <Nav.Link
+                href="#"
+                onClick={() => {
+                  this.props.setActiveCallback("Login");
+                }}
+              >
+                Appointment
+              </Nav.Link>
+              <Nav.Link
+                href="#"
+                onClick={() => {
+                  this.props.setActiveCallback("Login");
+                }}
+              >
+                Doctors
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
           <Form className="d-flex">
