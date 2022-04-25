@@ -23,7 +23,7 @@ function App() {
       <Login goToAppointments={value => setActive(value)}/>
       }
       {active === "Appointments" && 
-      <Appointments />
+      <Appointments setActiveCallback={value => setActive(value)} />
       }
     </div>
   );
