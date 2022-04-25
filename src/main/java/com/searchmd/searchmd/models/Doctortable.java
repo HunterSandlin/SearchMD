@@ -11,26 +11,26 @@ import javax.persistence.Table;
 @Table(name = "doctortable")
 public class Doctortable {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "doctorid")
     int DoctorId;
 
     @Column(name = "userid")
     int UserId;
 
-    @Column(name="dfname")
+    @Column(name = "dfname")
     String DoctorFirstName;
 
-    @Column(name="lfname")
+    @Column(name = "dlname")
     String DoctorLastName;
 
-    @Column(name="speciality")
+    @Column(name = "specialty")
     String Speciality;
 
-    @Column(name="userrole")
+    @Column(name = "userrole")
     String UserRole = "d";
 
-    @Column(name="zipcode")
+    @Column(name = "zipcode")
     int ZipCode;
 
     public int getZipCode() {
@@ -88,5 +88,5 @@ public class Doctortable {
     public void setUserRole(String UserRole) {
         this.UserRole = UserRole;
     }
-    
+
 }
